@@ -9,7 +9,7 @@ defmodule AshJsonApi.MixProject do
   The JSON:API extension for the Ash Framework.
   """
 
-  @version "1.6.0-rc.2"
+  @version "1.5.1"
 
   def project do
     [
@@ -68,8 +68,6 @@ defmodule AshJsonApi.MixProject do
         "documentation/topics/upgrade.md",
         "documentation/topics/authorize-with-json-api.md",
         "documentation/topics/authenticate-with-json-api.md",
-        "documentation/topics/errors.md",
-        "documentation/topics/field-names.md",
         "documentation/topics/paginated-relationships.md",
         {"documentation/dsls/DSL-AshJsonApi.Resource.md",
          search_data: Spark.Docs.search_data_for(AshJsonApi.Resource)},
@@ -145,7 +143,7 @@ defmodule AshJsonApi.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      {:ash, ash_version("~> 3.19 and >= 3.19.1")},
+      {:ash, ash_version("~> 3.0 and >= 3.4.69")},
       {:spark, "~> 2.2 and >= 2.2.10"},
       {:igniter, "~> 0.3 and >= 0.3.58", optional: true},
       {:plug, "~> 1.11"},

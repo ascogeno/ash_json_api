@@ -145,13 +145,11 @@ defmodule AshJsonApi.Plug.Parser do
          false
        )
        when data == %{} do
-    %Plug.Conn{} = conn
-
     with {:ok, type, subtype, _params} <- extract_part_type(part_headers),
          {:ok, content} <- File.read(path),
          {:ok, data, conn} <-
            JSON.parse(
-             %{conn | private: Map.put(conn.private, __MODULE__, content)},
+             %Plug.Conn{conn | private: Map.put(conn.private, __MODULE__, content)},
              type,
              subtype,
              part_headers,
